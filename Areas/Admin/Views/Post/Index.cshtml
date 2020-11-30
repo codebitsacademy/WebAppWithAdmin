@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Posts";
+}
+
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">All Posts</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <a asp-action="add" class="btn btn-primary mb-3">
+                    Create New Post
+                </a>
+                <button type="button" class="btn btn-light float-right d-none d-sm-block ml-2"> <i class="mdi mdi-format-list-bulleted"></i></button>
+                <button type="button" class="btn btn-light float-right"> <i class="mdi mdi-filter-variant mr-1"></i> Filter</button>
+                <table id="basic-datatable" class="table table-hover dt-responsive nowrap table-centered">
+                    <thead>
+                        <tr>
+                            <th>Author</th>
+                            <th>Post Title</th>
+                            <th>Category</th>
+                            <th>Number of <br>Comments</th>
+                            <th>Date Created</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+
+                            <td>
+                                <img src="assets/images/users/2.jpg" alt="contact-img" height="36" width="36" title="contact-img" class="rounded-circle float-left mr-2" />
+                                <p class="mb-0 font-weight-bold"><a asp-action="author-profile">James Stuart</a></p>
+                                <span class="font-13 d-none d-sm-block">stuart@gmail.com</span>
+                            </td>
+
+                            <td>
+                                Hello
+                            </td>
+
+                            <td>
+                                Hello
+                            </td>
+                            <td>
+                                5
+                            </td>
+
+                            <td>
+                                Wednesday, July 10, 2020
+                            </td>
+
+                            <td>
+                                <div class="btn-group dropdown">
+                                    <a href="javascript: void(0);" class="dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" asp-action="edit-post"><i class="mdi mdi-pencil mr-1 text-muted"></i>Edit Post</a>
+                                        <a class="dropdown-item" asp-action="delete-post"><i class="mdi mdi-delete mr-1 text-muted"></i>Delete</a>
+                                        <a class="dropdown-item" asp-action="view-post"><i class="mdi mdi-email mr-1 text-muted"></i>View Post</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div> <!-- end card-body-->
+        </div> <!-- end card -->
+    </div> <!-- end col -->
+</div>
+<!-- end row -->
